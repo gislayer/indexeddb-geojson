@@ -65,7 +65,6 @@ class IDBGeoJSON {
   }
 
   deleteLayer(layerId,callback){
-    debugger;
     var self = this;
     var version = this.getVersion();
     var request = window.indexedDB.open('gislayer', version);
@@ -245,7 +244,6 @@ database_1.add({
 database_1.add({
   type:'showLayer',
   callback:(layers)=>{
-    debugger
     layers.map((layer)=>{
       var features = GeoJSONToFeature(layer.geojson);
       addFeaturesToLayer(window[layer.layerid],features);

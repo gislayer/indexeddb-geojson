@@ -103,7 +103,6 @@ function draw(type){
   map.addInteraction(draw);
   draw.on('drawend', function (e) {
     setTimeout(function(){
-      debugger;
       var features = layer2.getSource().getFeatures();
       var geojson = featuresToGeoJSON(features);
       database_1.add({
@@ -126,7 +125,6 @@ function readGeoJSON(){
     var file = e.target.files[0];
     var reader = new FileReader();
     reader.addEventListener("load", function (e2) {
-      debugger;
       var geojson = JSON.parse(reader.result);
       database_1.add({
         type:'addLayer',
@@ -147,7 +145,6 @@ function readGeoJSON(){
                 layerId:'layer1'
               },
               callback:function(status2){
-                debugger;
                 if(status2){
                   document.getElementById('removeButton').style.display='none';
                   database_1.add({
@@ -191,7 +188,6 @@ function  removeGeoJSON() {
 }
 
 function clearAll() {
-  debugger;
   database_1.add({
     type:'updateLayer',
     param:{
